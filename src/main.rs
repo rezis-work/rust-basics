@@ -1,6 +1,8 @@
 fn main() {
-    let firstname = "Rezi";
-    let lastname = "Karanadze";
-    let greeting = format!("Hello, {} {}! nice to meet you!", firstname, lastname);
-    println!("{}", greeting);
+    let x = 1.1;
+    let y = 2.2;
+
+    let result = format!("x times y is {}", x * y);
+    println!("{}", result);
 }
+
