@@ -1,31 +1,16 @@
 fn main() {
-    let add_result = add_both(1.1, 2.2);
-    let subtract_result = subtract_both(1.1, 2.2);
-    let multiply_result = multiply_both(1.1, 2.2);
-    let divide_result = divide_both(1.1, 2.2);
+    let result = multiply(10, 2);
+    println!("result is {}", result);
 
-    println!("add_result is {}", add_result);
-    println!("subtract_result is {}", subtract_result);
-    println!("multiply_result is {}", multiply_result);
-    println!("divide_result is {}", divide_result);
-
-    let general_result = format!("add: {}, subtract: {}, multiply: {}, divide: {}", add_result, subtract_result, multiply_result, divide_result);
-
-    println!("general_result is {}", general_result);
+    let result = divide(10, 3);
+    println!("result is {}", result);
 }
 
-fn multiply_both(x: f64, y: f64) -> f64 {
-    return  x * y;
+fn multiply(x: i64, y: u8) -> i64 {
+    return x * y as i64;
 }
 
-fn add_both(x: f64, y: f64) -> f64 {
-    return x + y;
+fn divide(x: i32, y: u16) -> f64 {
+    return x as f64 / y as f64;
 }
 
-fn subtract_both(x: f64, y: f64) -> f64 {
-    return x - y;
-}
-
-fn divide_both(x: f64, y: f64) -> f64 {
-    return x / y;
-}
