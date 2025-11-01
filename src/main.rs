@@ -1,16 +1,23 @@
 fn main() {
-    let result = multiply(10, 2);
-    println!("result is {}", result);
+    let should_we_go_fast = true;
+    let should_we_go_slow = false;
 
-    let result = divide(10, 3);
-    println!("result is {}", result);
-}
+    let comparison = 5 == 3;
 
-fn multiply(x: i64, y: u8) -> i64 {
-    return x * y as i64;
-}
+    let cat_name = "tommy";
+    let cats_age = 10;
 
-fn divide(x: i32, y: u16) -> f64 {
-    return x as f64 / y as f64;
+    let cat_is_old = if cats_age > 10 { true as u8 } else { false as u8 };
+
+    if cat_name == "tommy" {
+        println!("tommy is a good boy");
+    } else {
+        println!("Hello stranger cat");
+    }
+
+    println!("should_we_go_fast is {}", should_we_go_fast as u8);
+    println!("should_we_go_slow is {}", should_we_go_slow as u8);
+    println!("comparison is {}", comparison as u8);
+    println!("cat_is_old is {}", cat_is_old);
 }
 
