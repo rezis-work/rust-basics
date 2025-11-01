@@ -1,24 +1,25 @@
 fn main() {
-    let city_name = "Tbilisi";
+    let point: (i64, i64, i64) = (0,0,0); // immutable tuple
+    let mut point_mut: (i64, i64, i64) = (0,0,0); // mutable tuple
+    let _unit: () = (); // unit tuple
 
-    println!("The city of {}:\n", city_name);
-    print_population(1_324_578, 114_293, 108_097);
+    point_mut.0 = 1;
+    point_mut.1 = 2;
+    point_mut.2 = 3;
+
+    let x = point.0;
+    let y = point.1;
+    let z = point.2;
+
+    let (k, l, m) = point;
+
+    let (n, o, p) = point_mut;
+
+
+    println!("x: {}, y: {}, z: {}", x, y, z);
+    println!("k: {}, l: {}, m: {}", k, l, m);
+    println!("n: {}, o: {}, p: {}", n, o, p);
 }
 
-fn print_population(adults: u64, kids: u32, buildings: u32) {
-    let population = adults + kids as u64;
+// we cant chenge size of a tuple
 
-    let buildings_per_person = buildings as f64 / population as f64;
-
-    println!("   Population: {}", population);
-    println!("        Adults: {}", adults);
-    println!("        Kids: {}", kids);
-    println!("    Buildings: {}", buildings);
-    println!("    Buildings per person: {}\n", buildings_per_person);
-
-    if buildings_per_person >= 1.0 {
-        println!("Everyone can have their own building!");
-    } else {
-        println!("Buildings must be shared!");
-    }
-}
