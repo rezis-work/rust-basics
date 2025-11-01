@@ -1,25 +1,15 @@
 fn main() {
-    let point: (i64, i64, i64) = (0,0,0); // immutable tuple
-    let mut point_mut: (i64, i64, i64) = (0,0,0); // mutable tuple
-    let _unit: () = (); // unit tuple
-
-    point_mut.0 = 1;
-    point_mut.1 = 2;
-    point_mut.2 = 3;
-
-    let x = point.0;
-    let y = point.1;
-    let z = point.2;
-
-    let (k, l, m) = point;
-
-    let (n, o, p) = point_mut;
-
-
-    println!("x: {}, y: {}, z: {}", x, y, z);
-    println!("k: {}, l: {}, m: {}", k, l, m);
-    println!("n: {}, o: {}, p: {}", n, o, p);
+    let point = new_point(1, 2, 3);
+    println!("x: {}, y: {}, z: {}", point.x, point.y, point.z);
 }
 
-// we cant chenge size of a tuple
+struct Point {
+    x: i64,
+    y: i64,
+    z: i64,
+}
+
+fn new_point(x: i64, y: i64, z: i64) -> Point {
+   Point { x, y, z }
+}
 
