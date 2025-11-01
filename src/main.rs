@@ -1,23 +1,24 @@
 fn main() {
-    let should_we_go_fast = true;
-    let should_we_go_slow = false;
+    let city_name = "Tbilisi";
 
-    let comparison = 5 == 3;
-
-    let cat_name = "tommy";
-    let cats_age = 10;
-
-    let cat_is_old = if cats_age > 10 { true as u8 } else { false as u8 };
-
-    if cat_name == "tommy" {
-        println!("tommy is a good boy");
-    } else {
-        println!("Hello stranger cat");
-    }
-
-    println!("should_we_go_fast is {}", should_we_go_fast as u8);
-    println!("should_we_go_slow is {}", should_we_go_slow as u8);
-    println!("comparison is {}", comparison as u8);
-    println!("cat_is_old is {}", cat_is_old);
+    println!("The city of {}:\n", city_name);
+    print_population(1_324_578, 114_293, 108_097);
 }
 
+fn print_population(adults: u64, kids: u32, buildings: u32) {
+    let population = adults + kids as u64;
+
+    let buildings_per_person = buildings as f64 / population as f64;
+
+    println!("   Population: {}", population);
+    println!("        Adults: {}", adults);
+    println!("        Kids: {}", kids);
+    println!("    Buildings: {}", buildings);
+    println!("    Buildings per person: {}\n", buildings_per_person);
+
+    if buildings_per_person >= 1.0 {
+        println!("Everyone can have their own building!");
+    } else {
+        println!("Buildings must be shared!");
+    }
+}
