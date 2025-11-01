@@ -1,8 +1,7 @@
 fn main() {
-    let x = 1.1;
-    let y = 2.2;
-
-    let result = format!("x times y is {}", x * y);
-    println!("{}", result);
+    let mut x = 1.1;
+    println!("x is {}, first print", x);
+    x = 2.2;
+    println!("x is {}, second print", x);
 }
 
